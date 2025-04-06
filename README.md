@@ -25,13 +25,6 @@ KEDA namespace'indeki bileşenler:
 HPA (Horizontal Pod Autoscaler) durumu:
 ![HPA Status](docs/images/kubectl-get-hpa.png)
 
-### Monitoring Dashboard'ları
-![Grafana Dashboard](docs/images/grafana-dashboard.png)
-![Pod Restart Alarmı](docs/images/pod-restart-alarm.png)
-
-### Istio Service Mesh
-![Istio Dashboard](docs/images/istio-dashboard.png)
-
 ## Proje Gereksinimleri ve Çözümleri
 
 ### 1. GKE Cluster Yapılandırması
