@@ -188,10 +188,3 @@ kubectl port-forward svc/monitoring-prometheus 9090:9090
 ```bash
 terraform destroy
 ```
-
-## Katkıda Bulunma
-1. Bu repository'yi fork edin
-2. Feature branch'i oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'feat: add amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
