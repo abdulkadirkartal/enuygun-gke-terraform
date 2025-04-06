@@ -1,0 +1,34 @@
+apiVersion: keda.sh/v1alpha1
+kind: KedaController
+metadata:
+  name: keda
+  namespace: keda
+spec:
+  watchNamespace: ""
+  operator:
+    name: keda-operator
+    watchNamespace: ""
+  metricsServer:
+    name: keda-metrics-apiserver
+    dnsPolicy: ClusterFirst
+    useHostNetwork: false
+---
+apiVersion: keda.sh/v1alpha1
+kind: ScaledObject
+metadata:
+  name: application-pool-http-scaler
+  namespace: default
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: application-pool
+  minReplicaCount: 1
+  maxReplicaCount: 3
+  triggers:
+  - type: prometheus
+    metadata:
+      serverAddress: http://prometheus-server.monitoring.svc.cluster.local:9090
+      metricName: http_requests_total
+      query: sum(rate(http_requests_total{job="application-pool"}[1m]))
+      threshold: "100" 
