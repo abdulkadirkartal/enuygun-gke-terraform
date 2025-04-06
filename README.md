@@ -166,6 +166,7 @@ kubectl port-forward svc/monitoring-prometheus 9090:9090
 ├── gke.tf                 # GKE cluster yapılandırması
 ├── network.tf             # Ağ yapılandırması
 ├── variables.tf           # Terraform değişkenleri
+├── terraform.tfvars       # Terraform değişken değerleri
 ├── kubernetes/
 │   ├── application-pool.yaml    # Uygulama deployment
 │   ├── monitoring/
